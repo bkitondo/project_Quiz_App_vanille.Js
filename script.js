@@ -1,9 +1,19 @@
 let nom =document.getElementById("nom");
 let email=document.getElementById("email");
-let username;
-let usermail;
-let resultat = 0;
+let username, usermail, resultat = 0;
 let NextButton = document.querySelectorAll(".suivant");
+let InputRadio = document.querySelectorAll(".radio");
+//  recovery of the choise Answer
+let GoodAnswer = document.querySelectorAll("#Answer");
+for ( let i = 0; i< GoodAnswer.length; i++)
+{
+    const Answer = GoodAnswer[i];
+    if(Answer.checked)
+    {
+    resultat+=1;
+    console.log(resultat);
+    }
+}
 // close all pages exepted accueil
 let Question = document.querySelectorAll(".question");
 for ( let i=0; i < Question.length; i++)
@@ -14,7 +24,9 @@ pageFinale.style="display: none";
 
 let accueil= document.getElementById("accueil");
 const form = document.querySelector("form");
-let commencer = document.getElementById("submit");
+// let testmail=document.getElementById("testmail");
+// let testname=document.getElementById("testname");
+// let commencer = document.getElementById("submit");
 form.addEventListener("submit", function(event){
     event.preventDefault();
     username = nom.value;
@@ -30,7 +42,6 @@ let pageFinaleMain = document.getElementById("pageFinaleMain");
 let InputUsername = document.createElement("p");
 InputUsername.textContent = username;
 pageFinaleMain.appendChild(InputUsername);
-console.log(InputUsername.textContent)
 
 let InputUsermail = document.createElement("p");
 InputUsermail.textContent= usermail;
@@ -74,9 +85,32 @@ for( let i=0; i < ExitButton.length; i++ )
     accueil.style="display: none";
     pageFinale.style="display: block";
 })};
-// // Inactivation of NextButton
-// // let NextButton = document.querySelectorAll(".suivant");
-// // for( let j=0; j < NextButton.length; j++ )
-// // { NextButton[j].disabled = true;
-// //     NextButton[j].style="backgroung : red";
-// // }
+// event of EndButton
+let EndButton = document.getElementById("EndButton");
+EndButton.addEventListener("click", function()
+    {
+        for ( let i=0; i < Question.length; i++)
+        {
+        Question[i].style="display: none";
+        }
+        accueil.style="display: block";
+        pageFinale.style="display: none"; 
+    });
+// Inactivation or Activation of NextButton
+for( let j=0; j < NextButton.length; j++ )
+{
+    {   NextButton[j].disabled = true;
+        NextButton[j].style="background: #028A3D6B";
+    // for ( let i=0; i<InputRadio.length; i++)
+    // { 
+    //     let RadioTrue= InputRadio[i];
+    //     RadioTrue.addEventListener("click", function()
+    //     { 
+    //         {NextButton[j].disabled = false;
+    //         NextButton[n].disabled=true;
+    //         NextButton[j].style="background: #028A3D"}
+    //         })
+    // }
+    }
+
+}

@@ -15,14 +15,18 @@
             Évaluez vos connaissances en JavaScript  en répondant aux questions que nous avons spécialement sélectionnées pour vous.
             <br>C'est fun et c'est gratuit. 
         </p>
-        <form><span>Nom</span>
+        <form><span class="legendeInput">Nom</span>
             <p> 
-            <input class="Input" type="text" name="nom" id="nom" placeholder="exemple Bleudy"  required autofocus/>
+            <input class="Input" type="text" name="nom" id="nom" placeholder="exemple Bleudy" autofocus/>
             </p>
-            <span>Email</span>
+            <span id="testname">N’oubliez pas de renseigner votre nom avant de commencer le Quiz.</span>
+            <br>
+            <br>
+            <span class="legendeInput" id="goodmail">Email</span>
             <p> 
-            <input class="Input" type="email" name="email" id="email" placeholder="exemple@gmail.com" required/>
+            <input class="Input" type="email" name="email" id="email" placeholder="exemple@gmail.com"/>
             </p>
+            <span id="testmail"> N’oubliez pas de renseigner votre email avant de commencer le Quiz</span>
             <p>
             <br><input type="submit" value="commencer" id="submit" />
             </p>
@@ -42,7 +46,7 @@
         </p>
         <p>
             <fieldset>
-                <input  class="radio" type="radio"  name="chek"  id="Quiz1" value="rep2"/>
+                <input  class="radio" type="radio"  name="chek"  id="Answer" value="rep2"/>
                 <label for="rep2"> let myVariable = 12;</label>
             </fieldset>
         </p>
@@ -54,7 +58,7 @@
         </p>
         <p>
             <fieldset>
-                <input type="radio"  name="chek"  value="rep4"/>
+                <input class="radio" type="radio"  name="chek"  value="rep4"/>
                 <label for="rep4"> let 12 = myVariable;</label>
             </fieldset>
         </p>
@@ -76,7 +80,7 @@
         </p>
         <p> 
             <fieldset>
-                <input class="radio" type="radio"  name="chek"  id="Quiz2" value="rep2"/>
+                <input class="radio" type="radio"  name="chek"  id="Answer" value="rep2"/>
                 <label for="rep2">Boolean</label>
             </fieldset>
         </p>
@@ -121,7 +125,7 @@
         </p>
         <p>
             <fieldset>
-                <input class="radio" type="radio"  name="chek"  id="Quiz3" value="rep3"/>
+                <input class="radio" type="radio"  name="chek"  id="Answer" value="rep3"/>
                 <label for="rep3"> 6</label>
             </fieldset>
         </p>
@@ -143,7 +147,7 @@
         <span>Question 4/15</span>
         <p>
             <fieldset>
-                <input class="radio" type="radio"  name="chek" id="Quiz4"  value="rep1"/>
+                <input class="radio" type="radio"  name="chek" id="Answer"  value="rep1"/>
                 <label for="rep1"> {}  accolades.</label>
             </fieldset>
         </p>
@@ -183,7 +187,7 @@
         </p>
         <p>
             <fieldset>
-                <input class="radio" type="radio"  name="chek"  id="Quiz5"value="rep2"/>
+                <input class="radio" type="radio"  name="chek"  id="Answer"value="rep2"/>
                 <label for="rep2">[]  crochets.</label>
             </fieldset>
         </p>
@@ -212,25 +216,25 @@
         <span>Question 6/15</span>
         <p>
             <fieldset>
-                <input type="radio"  name="chek" value="rep1"/>
+                <input class="radio" type="radio"  name="chek" value="rep1"/>
                 <label for="rep1">let numberOfUsers = onlineUsers.size;</label>
             </fieldset>
         </p>
         <p>
             <fieldset>
-                <input type="radio"  name="chek" value="rep2"/>
+                <input class="radio" type="radio"  name="chek" value="rep2"/>
                 <label for="rep2">let numberOfUsers = onlineUsers.quantity;</label>
             </fieldset>
         </p>
         <p>
             <fieldset>
-                <input type="radio"  name="chek"  value="rep3"/>
+                <input class="radio" type="radio"  name="chek"  value="rep3"/>
                 <label for="rep3">let numberOfUsers = onlineUsers.index;</label>
             </fieldset>
         </p>
         <p>
             <fieldset>
-                <input type="radio"  name="chek"  id="Quiz6" value=".rep4"/>
+                <input class="radio" type="radio"  name="chek"  id="Answer" value=".rep4"/>
                 <label for="rep4">let numberOfUsers = onlineUsers.length;</label>
             </fieldset>
         </p>
@@ -253,19 +257,19 @@
         </p>
         <p>
             <fieldset>
-                <input type="radio"  name="chek"  value="rep2"/>
+                <input class="radio" type="radio"  name="chek"  value="rep2"/>
                 <label for="rep2"> On peut déclarer une constante sans l'initialiser.</label>
             </fieldset>
         </p>
         <p>
             <fieldset>
-                <input type="radio"  name="chek" value="rep3"/>
+                <input  class="radio"type="radio"  name="chek" value="rep3"/>
                 <label for="rep3"> Leur type peut être modifié après déclaration.</label>
             </fieldset>
         </p>
         <p>
             <fieldset>
-                <input type="radio"  name="chek"  id="Quiz7"value="rep4"/>
+                <input  class="radio" type="radio"  name="chek"  id="Answer"value="rep4"/>
                 <label for="rep4">Une fois déclarées, leur valeur ne peut être modifiée.</label>
             </fieldset>
         </p>
@@ -283,7 +287,7 @@
         <br><span>Question 8/15</span>
         <p>
             <fieldset>
-                <input class="radio" type="radio"  name="chek" id="Quiz8"  value="rep1"/>
+                <input class="radio" type="radio"  name="chek" id="Answer"  value="rep1"/>
                 <label for="rep1">guests.push("Tau Perkington");</label>
             </fieldset>
         </p>
@@ -334,7 +338,7 @@
         </p>
         <p>
             <fieldset>
-                <input class="radio" type="radio"  name="chek"  id="Quiz9"value="rep3"/>
+                <input class="radio" type="radio"  name="chek"  id="Answer"value="rep3"/>
                 <label for="rep3">let title = book.title;</label>
             </fieldset>
         </p>
@@ -369,7 +373,7 @@
         </p>
         <p>
             <fieldset>
-                <input class="radio" type="radio"  name="chek"  id="Quiz10"value="rep2"/>
+                <input class="radio" type="radio"  name="chek"  id="Answer"value="rep2"/>
                 <label for="rep1">let firstMovie = new Movie("Titanic", "Jacques", 90);</label>
             </fieldset>
         </p>
@@ -407,7 +411,7 @@
         </p>
         <p>
             <fieldset>
-                <input class="radio" type="radio"  name="chek"  id="Quiz11" value="rep2"/>
+                <input class="radio" type="radio"  name="chek"  id="Answer" value="rep2"/>
                 <label for="rep2">"Utilisateur en ligne !"</label>
             </fieldset>
         </p>
@@ -451,7 +455,7 @@
         </p>
         <p>
             <fieldset>
-                <input class="radio" type="radio"  name="chek"  id="Quiz12" value="rep3"/>
+                <input class="radio" type="radio"  name="chek"  id="Answer" value="rep3"/>
                 <label for="rep3"> 10</label>
             </fieldset>
         </p>
@@ -481,7 +485,7 @@
         </p>
         <p>
             <fieldset>
-                <input class="radio" type="radio"  name="chek"  id="Quiz13" value="rep2"/>
+                <input class="radio" type="radio"  name="chek"  id="Answer" value="rep2"/>
                 <label for="rep1">5</label>
             </fieldset>
         </p>
@@ -529,7 +533,7 @@
         </p>
         <p>
             <fieldset>
-                <input class="radio" type="radio"  name="chek" value="rep3"/>
+                <input class="radio" type="radio"  name="chek" id="Answer" value="rep3"/>
                 <label for="rep3">14</label>
             </fieldset>
         </p>
@@ -551,7 +555,7 @@
         <span>Question 15/15</span>
         <p>
             <fieldset>
-                <input class="radio" type="radio"  name="chek" id="Quiz15"  value="rep1"/>
+                <input class="radio" type="radio"  name="chek" id="Answer"  value="rep1"/>
                 <label for="rep1"> .js</label>
             </fieldset>
         </p>

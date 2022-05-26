@@ -15,20 +15,24 @@
             Évaluez vos connaissances en JavaScript  en répondant aux questions que nous avons spécialement sélectionnées pour vous.
             <br>C'est fun et c'est gratuit. 
         </p>
-        <form><span>Nom</span>
+        <form><span class="legendeInput">Nom</span>
             <p> 
-            <input class="Input" type="text" name="nom" id="nom" placeholder="exemple Bleudy"  required autofocus/>
+            <input class="Input" type="text" name="nom" id="nom" placeholder="exemple Bleudy" autofocus/>
             </p>
-            <span>Email</span>
+            <span id="testname">N’oubliez pas de renseigner votre nom avant de commencer le Quiz.</span>
+            <br>
+            <br>
+            <span class="legendeInput" id="goodmail">Email</span>
             <p> 
-            <input class="Input" type="email" name="email" id="email" placeholder="exemple@gmail.com" required/>
+            <input class="Input" type="email" name="email" id="email" placeholder="exemple@gmail.com"/>
             </p>
+            <span id="testmail"> N’oubliez pas de renseigner votre email avant de commencer le Quiz</span>
             <p>
             <br><input type="submit" value="commencer" id="submit" />
             </p>
         </form>
     </div>
-    <div id="question1">
+    <div class="question">
         <p>
             Parmi les propositions suivantes, laquelle correspond à une déclaration et une initialisation de la variable <strong>variable</strong> ?
         </p>
@@ -42,7 +46,7 @@
         </p>
         <p>
             <fieldset>
-                <input  class="radio" type="radio"  name="chek"  id="Quiz1" value="rep2"/>
+                <input  class="radio" type="radio"  name="chek"  id="Answer" value="rep2"/>
                 <label for="rep2"> let myVariable = 12;</label>
             </fieldset>
         </p>
@@ -54,7 +58,7 @@
         </p>
         <p>
             <fieldset>
-                <input type="radio"  name="chek"  value="rep4"/>
+                <input class="radio" type="radio"  name="chek"  value="rep4"/>
                 <label for="rep4"> let 12 = myVariable;</label>
             </fieldset>
         </p>
@@ -63,7 +67,7 @@
             <button class="suivant" id="suivant1"> Suivant</button>
         </p>
     </div>
-    <div id="question2">
+    <div class="question">
         <p>
             Quelle proposition correspond à un type primitif en JavaScript ?
         </p>
@@ -76,7 +80,7 @@
         </p>
         <p> 
             <fieldset>
-                <input class="radio" type="radio"  name="chek"  id="Quiz2" value="rep2"/>
+                <input class="radio" type="radio"  name="chek"  id="Answer" value="rep2"/>
                 <label for="rep2">Boolean</label>
             </fieldset>
         </p>
@@ -97,7 +101,7 @@
             <button class="suivant" id="suivant2"> Suivant</button>
         </p>
     </div>
-    <div id="question3">
+    <div class="question">
         <p>
             Quelle est la valeur attendue de la variable <strong>numberOfCats</strong> à la fin de cet extrait de code ?
         </p>    
@@ -121,7 +125,7 @@
         </p>
         <p>
             <fieldset>
-                <input class="radio" type="radio"  name="chek"  id="Quiz3" value="rep3"/>
+                <input class="radio" type="radio"  name="chek"  id="Answer" value="rep3"/>
                 <label for="rep3"> 6</label>
             </fieldset>
         </p>
@@ -136,14 +140,14 @@
             <button class="suivant" id="suivant3"> Suivant</button>
         </p>
     </div>
-    <div id="question4">
+    <div class="question">
         <p>
             En JavaScript, un object est déclaré comme une liste de paires clé/valeur entre…
         </p>
         <span>Question 4/15</span>
         <p>
             <fieldset>
-                <input class="radio" type="radio"  name="chek" id="Quiz4"  value="rep1"/>
+                <input class="radio" type="radio"  name="chek" id="Answer"  value="rep1"/>
                 <label for="rep1"> {}  accolades.</label>
             </fieldset>
         </p>
@@ -170,7 +174,7 @@
             <button class="suivant" id="suivant4"> Suivant</button>
         </p>
     </div>
-    <div id="question5">
+    <div class="question">
         <p>
         On déclare un array (tableau) comme une liste d'éléments, séparés par des virgules, entre…
         </p>
@@ -183,7 +187,7 @@
         </p>
         <p>
             <fieldset>
-                <input class="radio" type="radio"  name="chek"  id="Quiz5"value="rep2"/>
+                <input class="radio" type="radio"  name="chek"  id="Answer"value="rep2"/>
                 <label for="rep2">[]  crochets.</label>
             </fieldset>
         </p>
@@ -205,32 +209,32 @@
             <button class="suivant"  id="suivant5"> Suivant</button>
         </p>
     </div>
-    <div id="question6">
+    <div class="question">
         <p>
             Comment feriez-vous pour calculer le nombre d'éléments dans l'array  onlineUsers  ?
         </p>
         <span>Question 6/15</span>
         <p>
             <fieldset>
-                <input type="radio"  name="chek" value="rep1"/>
+                <input class="radio" type="radio"  name="chek" value="rep1"/>
                 <label for="rep1">let numberOfUsers = onlineUsers.size;</label>
             </fieldset>
         </p>
         <p>
             <fieldset>
-                <input type="radio"  name="chek" value="rep2"/>
+                <input class="radio" type="radio"  name="chek" value="rep2"/>
                 <label for="rep2">let numberOfUsers = onlineUsers.quantity;</label>
             </fieldset>
         </p>
         <p>
             <fieldset>
-                <input type="radio"  name="chek"  value="rep3"/>
+                <input class="radio" type="radio"  name="chek"  value="rep3"/>
                 <label for="rep3">let numberOfUsers = onlineUsers.index;</label>
             </fieldset>
         </p>
         <p>
             <fieldset>
-                <input type="radio"  name="chek"  id="Quiz6" value=".rep4"/>
+                <input class="radio" type="radio"  name="chek"  id="Answer" value=".rep4"/>
                 <label for="rep4">let numberOfUsers = onlineUsers.length;</label>
             </fieldset>
         </p>
@@ -239,7 +243,7 @@
             <button class="suivant"  id="suivant6"> Suivant</button>
         </p>
     </div>
-    <div id="question7">
+    <div class="question">
 
         <p>
             Quelle phrase ci-dessous est  vraie au sujet des constantes ?
@@ -253,19 +257,19 @@
         </p>
         <p>
             <fieldset>
-                <input type="radio"  name="chek"  value="rep2"/>
+                <input class="radio" type="radio"  name="chek"  value="rep2"/>
                 <label for="rep2"> On peut déclarer une constante sans l'initialiser.</label>
             </fieldset>
         </p>
         <p>
             <fieldset>
-                <input type="radio"  name="chek" value="rep3"/>
+                <input  class="radio"type="radio"  name="chek" value="rep3"/>
                 <label for="rep3"> Leur type peut être modifié après déclaration.</label>
             </fieldset>
         </p>
         <p>
             <fieldset>
-                <input type="radio"  name="chek"  id="Quiz7"value="rep4"/>
+                <input  class="radio" type="radio"  name="chek"  id="Answer"value="rep4"/>
                 <label for="rep4">Une fois déclarées, leur valeur ne peut être modifiée.</label>
             </fieldset>
         </p>
@@ -274,7 +278,7 @@
             <button class="suivant"  id="suivant7"> Suivant</button>
         </p>
     </div>
-    <div id="question8">
+    <div class="question">
         <p>
             Quelle instruction permet d'ajouter un nouvel invité à la fin de l'array ci-dessous ?
         </p>
@@ -283,7 +287,7 @@
         <br><span>Question 8/15</span>
         <p>
             <fieldset>
-                <input class="radio" type="radio"  name="chek" id="Quiz8"  value="rep1"/>
+                <input class="radio" type="radio"  name="chek" id="Answer"  value="rep1"/>
                 <label for="rep1">guests.push("Tau Perkington");</label>
             </fieldset>
         </p>
@@ -310,7 +314,7 @@
             <button  class="suivant" id="suivant8"> Suivant</button>
         </p>
     </div>
-    <div id="question9">
+    <div class="question">
 
         <p>
             Comment accéderiez-vous à la propriété  title  de cet objet  book  ?
@@ -334,7 +338,7 @@
         </p>
         <p>
             <fieldset>
-                <input class="radio" type="radio"  name="chek"  id="Quiz9"value="rep3"/>
+                <input class="radio" type="radio"  name="chek"  id="Answer"value="rep3"/>
                 <label for="rep3">let title = book.title;</label>
             </fieldset>
         </p>
@@ -349,7 +353,7 @@
             <button class="suivant" id="suivant9"> Suivant</button>
         </p>
     </div>
-    <div id="question10">
+    <div class="question">
         <p>
             Considérez la classe ci-dessous, quelle solution crée correctement une nouvelle instance de cette classe ?
         </p>
@@ -369,7 +373,7 @@
         </p>
         <p>
             <fieldset>
-                <input class="radio" type="radio"  name="chek"  id="Quiz10"value="rep2"/>
+                <input class="radio" type="radio"  name="chek"  id="Answer"value="rep2"/>
                 <label for="rep1">let firstMovie = new Movie("Titanic", "Jacques", 90);</label>
             </fieldset>
         </p>
@@ -390,7 +394,7 @@
             <button class="suivant" id="suivant10"> Suivant</button>
         </p>
     </div>
-    <div id="question11">
+    <div class="question">
         <p>Quelle est la valeur de  message  à la fin de cet extrait ?</p>
         <span>let online = true;</span>
         <br><span>let message = "";</span>
@@ -407,7 +411,7 @@
         </p>
         <p>
             <fieldset>
-                <input class="radio" type="radio"  name="chek"  id="Quiz11" value="rep2"/>
+                <input class="radio" type="radio"  name="chek"  id="Answer" value="rep2"/>
                 <label for="rep2">"Utilisateur en ligne !"</label>
             </fieldset>
         </p>
@@ -428,7 +432,7 @@
             <button class="suivant" id="suivant11"> Suivant</button>
         </p>
     </div>
-    <div id="question12">
+    <div class="question">
         <p>Quelle est la valeur de  passengersBoarded  à la fin de cet extrait ?</p>
         <span>let passengersBoarded = 0;</span>
         <br><span>if (passengersBoarded <= 10)</span>
@@ -451,7 +455,7 @@
         </p>
         <p>
             <fieldset>
-                <input class="radio" type="radio"  name="chek"  id="Quiz12" value="rep3"/>
+                <input class="radio" type="radio"  name="chek"  id="Answer" value="rep3"/>
                 <label for="rep3"> 10</label>
             </fieldset>
         </p>
@@ -466,7 +470,7 @@
             <button class="suivant" id="suivant12"> Suivant</button>
         </p>
     </div>
-    <div id="question13">
+    <div class="question">
         <p>Combien de fois la phrase  "Oh hey!"  sera affichée dans la console ?</p>
         <br><span>for (let i = 0; i < 5; i++) </span>
         <br><span>{console.log('Oh hey!');}</span>
@@ -481,7 +485,7 @@
         </p>
         <p>
             <fieldset>
-                <input class="radio" type="radio"  name="chek"  id="Quiz13" value="rep2"/>
+                <input class="radio" type="radio"  name="chek"  id="Answer" value="rep2"/>
                 <label for="rep1">5</label>
             </fieldset>
         </p>
@@ -502,7 +506,7 @@
             <button class="suivant"  id="suivant13"> Suivant</button>
         </p>
     </div>
-    <div id="question14">
+    <div class="question">
         <p>Quelle est la valeur de  passengersBoarded  à la fin de cet extrait ?</p> 
             <br><span>const passengers = [</span>
             <br><span>"Will Alexander",</span>
@@ -529,7 +533,7 @@
         </p>
         <p>
             <fieldset>
-                <input class="radio" type="radio"  name="chek" value="rep3"/>
+                <input class="radio" type="radio"  name="chek" id="Answer" value="rep3"/>
                 <label for="rep3">14</label>
             </fieldset>
         </p>
@@ -544,14 +548,14 @@
             <button class="suivant" id="suivant14"> Suivant</button>
         </p>
     </div>
-    <div id="question15">
+    <div class="question">
         <p>Quel est le type d'un fichier javascript</p>
         <br>
         <br>
         <span>Question 15/15</span>
         <p>
             <fieldset>
-                <input class="radio" type="radio"  name="chek" id="Quiz15"  value="rep1"/>
+                <input class="radio" type="radio"  name="chek" id="Answer"  value="rep1"/>
                 <label for="rep1"> .js</label>
             </fieldset>
         </p>

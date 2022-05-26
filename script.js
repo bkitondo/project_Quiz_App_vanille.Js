@@ -3,7 +3,7 @@ let email=document.getElementById("email");
 let username, usermail, resultat = 0;
 let NextButton = document.querySelectorAll(".suivant");
 let InputRadio = document.querySelectorAll(".radio");
-//  recovery of the choise Answer
+//  recovery of the choice Answer
 let GoodAnswer = document.querySelectorAll("#Answer");
 for ( let i = 0; i< GoodAnswer.length; i++)
 {
@@ -97,10 +97,10 @@ EndButton.addEventListener("click", function()
         pageFinale.style="display: none"; 
     });
 // Inactivation or Activation of NextButton
-for( let j=0; j < NextButton.length; j++ )
-{
-    {   NextButton[j].disabled = true;
-        NextButton[j].style="background: #028A3D6B";
+// for( let j=0; j < NextButton.length; j++ )
+// {
+//     {   NextButton[j].disabled = true;
+//         NextButton[j].style="background: #028A3D6B";
     // for ( let i=0; i<InputRadio.length; i++)
     // { 
     //     let RadioTrue= InputRadio[i];
@@ -111,6 +111,6 @@ for( let j=0; j < NextButton.length; j++ )
     //         NextButton[j].style="background: #028A3D"}
     //         })
     // }
-    }
+//     }
 
-}
+// }

@@ -1,279 +1,277 @@
-let MainPAge=document.querySelector("main");
-let StartPage=document.querySelector(".StartPage");
+let mainPage=document.querySelector("main");
+let startPage=document.querySelector(".startPage");
 let email=document.querySelector("#email");
 let nom=document.querySelector("#nom");
 let allInputs=document.querySelectorAll('[type|="radio"]');
+let alertName =document.querySelector(".alertName");
+let alertMail =document.querySelector(".alertMail");
 // Create elements of EndPAges
-let EndPage=document.createElement("div"); 
-EndPage.classList.add("EndPage");
-MainPAge.appendChild(EndPage);
-let InputName=document.createElement("h2"); 
-InputName.classList.add("second-title");
-EndPage.appendChild(InputName);
-let InputMail=document.createElement("p");
-InputMail.classList.add("UserMail");
-EndPage.appendChild(InputMail);
+let endPage=document.createElement("div"); 
+endPage.classList.add("endPage"); mainPage.appendChild(endPage);
+let displayGamerName=document.createElement("h2"); 
+displayGamerName.classList.add("secondTitle");
+endPage.appendChild(displayGamerName);
+let displayGamerMail=document.createElement("p");
+displayGamerMail.classList.add("gamerMail");
+endPage.appendChild(displayGamerMail);
 
-let IconeEndPage = document.createElement("img");
-EndPage.appendChild(IconeEndPage);
+let iconeEndPage = document.createElement("img");
+endPage.appendChild(iconeEndPage);
 
-let InputScore=document.createElement("p");
-InputScore.classList.add("score");
-EndPage.appendChild(InputScore);
+let displayGamerScore=document.createElement("p");
+displayGamerScore.classList.add("score");
+endPage.appendChild(displayGamerScore);
 
-let EndButton=document.createElement("button");
-EndButton.classList.add("EndButton","style-of-button");
-EndPage.appendChild(EndButton);
+let endButton=document.createElement("button");
+endButton.classList.add("endButton","styleOfButton");
+endPage.appendChild(endButton);
 // Create page of Quiz
-let MainPAgeOfQUiz=document.createElement("div"); 
-MainPAgeOfQUiz.classList.add("DivQuiz");
-MainPAge.appendChild(MainPAgeOfQUiz);
+let mainPAgeOfQUiz=document.createElement("div"); 
+mainPAgeOfQUiz.classList.add("divQuiz"); mainPage.appendChild(mainPAgeOfQUiz);
 
-let Questionnaire = document.createElement("p");
-Questionnaire.classList.add("Quiz");
-MainPAgeOfQUiz.appendChild(Questionnaire); 
+let questions = document.createElement("p");
+questions.classList.add("quiz");
+mainPAgeOfQUiz.appendChild(questions); 
 // Number of questions
-let IndexQuizAndChrono=document.createElement("p");
-IndexQuizAndChrono.classList.add("Quiz-number-and-chrono");
+let indexQuizAndChrono=document.createElement("p");
+indexQuizAndChrono.classList.add("quizNumberAndChrono");
 
-let IndexOfQuiz=document.createElement("span");
-IndexOfQuiz.classList.add("number-of-Quiz");
-IndexQuizAndChrono.appendChild(IndexOfQuiz);
+let indexOfQuiz=document.createElement("span");
+indexOfQuiz.classList.add("numberOfQuiz");
+indexQuizAndChrono.appendChild(indexOfQuiz);
 
 let chrono=document.createElement("span");
 chrono.classList.add("chrono");
-IndexQuizAndChrono.appendChild(chrono);
-MainPAgeOfQUiz.appendChild(IndexQuizAndChrono);
+indexQuizAndChrono.appendChild(chrono);
+mainPAgeOfQUiz.appendChild(indexQuizAndChrono);
 // Progressbar
 let progressBar=document.createElement("div");
-progressBar.classList.add("progress-bar");
-MainPAgeOfQUiz.appendChild(progressBar);
+progressBar.classList.add("progressBar");
+mainPAgeOfQUiz.appendChild(progressBar);
 
 let progressBarContained=document.createElement("span");
-progressBarContained.classList.add("progress-bar-contained");
+progressBarContained.classList.add("progressBarContained");
 progressBar.appendChild(progressBarContained);
 //  Create container of each Answer
-let AnswerList=document.createElement("div");
-AnswerList.classList.add("choice-list");
-MainPAgeOfQUiz.appendChild(AnswerList);
+let answerList=document.createElement("section");
+answerList.classList.add("choiceList");
+mainPAgeOfQUiz.appendChild(answerList);
 
-let AnswerOne=document.createElement("div");
-AnswerOne.classList.add("choice-list__element");
-AnswerList.appendChild(AnswerOne);
+let answerOne=document.createElement("div");
+answerOne.classList.add("choiceListElement");
+answerList.appendChild(answerOne);
 
-let AnswerTwo=document.createElement("div");
-AnswerTwo.classList.add("choice-list__element");
-AnswerList.appendChild(AnswerTwo);
+let answerTwo=document.createElement("div");
+answerTwo.classList.add("choiceListElement");
+answerList.appendChild(answerTwo);
 
-let AnswerTree=document.createElement("div");
-AnswerTree.classList.add("choice-list__element");
-AnswerList.appendChild(AnswerTree);
+let answerTree=document.createElement("div");
+answerTree.classList.add("choiceListElement");
+answerList.appendChild(answerTree);
 
-let AnswerFour=document.createElement("div");
-AnswerFour.classList.add("choice-list__element");
-AnswerList.appendChild(AnswerFour);
-// Create AllButton 
-let AllButton=document.createElement("div");
-AllButton.classList.add("AllButton");
-AnswerList.appendChild(AllButton);
+let answerFour=document.createElement("div");
+answerFour.classList.add("choiceListElement");
+answerList.appendChild(answerFour);
+// Create containerOfButton 
+let containerOfButton=document.createElement("div");
+containerOfButton.classList.add("containerOfButton");
+answerList.appendChild(containerOfButton);
 
-let ExitButton=document.createElement("button");
-ExitButton.classList.add("button-quit", "style-of-button");
-ExitButton.textContent="Quitter";
-AllButton.appendChild(ExitButton);
+let exitButton=document.createElement("button");
+exitButton.classList.add("buttonExit", "styleOfButton");
+exitButton.textContent="Quitter";
+containerOfButton.appendChild(exitButton);
 
-let NextButton=document.createElement("button");
-NextButton.classList.add("button-next", "style-of-button");
-NextButton.textContent="Suivant";
-AllButton.appendChild(NextButton);
+let nextButton=document.createElement("button");
+nextButton.classList.add("buttonNext", "styleOfButton");
+nextButton.textContent="Suivant";
+containerOfButton.appendChild(nextButton);
 //Create of Answers to Choose from
 // InputRadio of First Choice
-let FirstChoice=document.createElement("input");
-FirstChoice.setAttribute("type","radio");
-FirstChoice.setAttribute("id","AnswerOne");
-FirstChoice.setAttribute("name","choice");
-AnswerOne.appendChild(FirstChoice);
+let firstChoice=document.createElement("input");
+firstChoice.setAttribute("type","radio");
+firstChoice.setAttribute("id","answerOne");
+firstChoice.setAttribute("name","choice");
+answerOne.appendChild(firstChoice);
 // label of First Choice
 let label1=document.createElement("label");
 label1.classList.add("inputRadio");
-label1.setAttribute("for","AnswerOne");
-AnswerOne.appendChild(label1);
+label1.setAttribute("for","answerOne");
+answerOne.appendChild(label1);
 // InputRadio of second Choice
-let SecondChoice=document.createElement("input");
-SecondChoice.setAttribute("type","radio");
-SecondChoice.setAttribute("id","AnswerTwo");
-SecondChoice.setAttribute("name","choice");
-AnswerTwo.appendChild(SecondChoice);
+let secondChoice=document.createElement("input");
+secondChoice.setAttribute("type","radio");
+secondChoice.setAttribute("id","answerTwo");
+secondChoice.setAttribute("name","choice");
+answerTwo.appendChild(secondChoice);
 // label of second Choice
 let label2=document.createElement("label");
 label2.classList.add("inputRadio");
-label2.setAttribute("for","AnswerTwo");
-AnswerTwo.appendChild(label2);
+label2.setAttribute("for","answerTwo");
+answerTwo.appendChild(label2);
 // InputRadio of Third Choice
-let ThirdChoice=document.createElement("input");
-ThirdChoice.setAttribute("type","radio");
-ThirdChoice.setAttribute("id","AnswerTree");
-ThirdChoice.setAttribute("name","choice");
-AnswerTree.appendChild(ThirdChoice);
+let thirdChoice=document.createElement("input");
+thirdChoice.setAttribute("type","radio");
+thirdChoice.setAttribute("id","answerTree");
+thirdChoice.setAttribute("name","choice");
+answerTree.appendChild(thirdChoice);
 // label of Third Choice
 let label3=document.createElement("label");
 label3.classList.add("inputRadio");
-label3.setAttribute("for","AnswerTree");
-AnswerTree.appendChild(label3);
+label3.setAttribute("for","answerTree");
+answerTree.appendChild(label3);
 // InputRadio of Fourth Choice
-let FourthChoice=document.createElement("input");
-FourthChoice.setAttribute("type","radio");
-FourthChoice.setAttribute("id","AnswerFour");
-FourthChoice.setAttribute("name","choice");
-AnswerFour.appendChild(FourthChoice);
+let fourthChoice=document.createElement("input");
+fourthChoice.setAttribute("type","radio");
+fourthChoice.setAttribute("id","answerFour");
+fourthChoice.setAttribute("name","choice");
+answerFour.appendChild(fourthChoice);
 // label of Fourth Choice
 let label4=document.createElement("label");
 label4.classList.add("inputRadio");
-label4.setAttribute("for","AnswerFour");
-AnswerFour.appendChild(label4);
+label4.setAttribute("for","answerFour");
+answerFour.appendChild(label4);
 
-let AlertName =document.querySelector(".AlertName");
-let AlertMail =document.querySelector(".AlertMail");
 let validate=false;
 let index=0;
 // Create QUizs
-let QuizOne=
+let quizOne=
     {
     Quiz: "Parmi les propositions suivantes, laquelle correspond à une déclaration et une initialisation de la variable ?",
-    FirstChoice: "variable myVariable = 12;",
-    SecondChoice: "let 12 = myVariable;",
-    ThirdChoice: "let myVariable = 12;",
-    FourthChoice: "let my variable = 12;",
-    GoogAnswer:"let myVariable = 12;"
+    firstChoice: "variable myVariable = 12;",
+    secondChoice: "let 12 = myVariable;",
+    thirdChoice: "let myVariable = 12;",
+    fourthChoice: "let my variable = 12;",
+    googAnswer:"let myVariable = 12;"
     };
-let QuizTwo=
+let quizTwo=
     {
     Quiz: " Quelle proposition correspond à un type primitif en JavaScript ?",
-     FirstChoice: " Array",
-    SecondChoice: "Boolean", 
-    ThirdChoice: "Object",
-    FourthChoice: "Class",
-    GoogAnswer:"Boolean"
+     firstChoice: " Array",
+    secondChoice: "Boolean", 
+    thirdChoice: "Object",
+    fourthChoice: "Class",
+    googAnswer:"Boolean"
     };
-let QuizThree=
+let quizThree=
     {
     Quiz: " Quelle est la valeur attendue de la variable numberOfCats à la fin de cet extrait de code ?                 {let numberOfCats=10;  numberOfCats+=5;  numberOfCats/=3; numberOfCats++;} ",
-    FirstChoice: "4",
-    SecondChoice: "5",
-    ThirdChoice: "6",
-    FourthChoice: "7",
-    GoogAnswer:"6"
+    firstChoice: "4",
+    secondChoice: "5",
+    thirdChoice: "6",
+    fourthChoice: "7",
+    googAnswer:"6"
     };
-let QuizFour=
+let quizFour=
     {
     Quiz: "En JavaScript, un object est déclaré comme une liste de paires clé/valeur entre…",
-    FirstChoice: "{}  accolades.",
-    SecondChoice: "[]  crochets.",
-    ThirdChoice: "()  parenthèses.",
-    FourthChoice: "aucune des réponses ci-dessus.",
-    GoogAnswer:"{}  accolades."
+    firstChoice: "{}  accolades.",
+    secondChoice: "[]  crochets.",
+    thirdChoice: "()  parenthèses.",
+    fourthChoice: "aucune des réponses ci-dessus.",
+    googAnswer:"{}  accolades."
     };
-let QuizFive=
+let quizFive=
     {
     Quiz: "On déclare un array (tableau) comme une liste d'éléments, séparés par des virgules, entre…",
-    FirstChoice: "()  parenthèses.",
-    SecondChoice: "{}  accolades.",
-    ThirdChoice: "[]  crochets.",
-    FourthChoice: "aucune des réponses ci-dessus.",
-    GoogAnswer:"[]  crochets."
+    firstChoice: "()  parenthèses.",
+    secondChoice: "{}  accolades.",
+    thirdChoice: "[]  crochets.",
+    fourthChoice: "aucune des réponses ci-dessus.",
+    googAnswer:"[]  crochets."
     };
-let QuizSix=
+let quizSix=
     {
     Quiz: "Comment feriez-vous pour calculer le nombre d'éléments dans l'array  onlineUsers  ?",
-    FirstChoice: "let numberOfUsers = onlineUsers.size;",
-    SecondChoice: "let numberOfUsers = onlineUsers.quantity;",
-    ThirdChoice: "let numberOfUsers = onlineUsers.index;",
-    FourthChoice: "let numberOfUsers = onlineUsers.length;",
-    GoogAnswer:"let numberOfUsers = onlineUsers.length;"
+    firstChoice: "let numberOfUsers = onlineUsers.size;",
+    secondChoice: "let numberOfUsers = onlineUsers.quantity;",
+    thirdChoice: "let numberOfUsers = onlineUsers.index;",
+    fourthChoice: "let numberOfUsers = onlineUsers.length;",
+    googAnswer:"let numberOfUsers = onlineUsers.length;"
     };
-let QuizSeven=
+let quizSeven=
     {
     Quiz: "Quelle phrase ci-dessous est  vraie au sujet des constantes ?",
-    FirstChoice: "leur valeur peut être modifiée apres la declaration.",
-    SecondChoice: "On peut déclarer une constante sans l'initialiser.",
-    ThirdChoice: "Leur type peut être modifié après déclaration.",
-    FourthChoice: "Une fois déclarées, leur valeur ne peut être modifiée.",
-    GoogAnswer:"Une fois déclarées, leur valeur ne peut être modifiée."
+    firstChoice: "leur valeur peut être modifiée apres la declaration.",
+    secondChoice: "On peut déclarer une constante sans l'initialiser.",
+    thirdChoice: "Leur type peut être modifié après déclaration.",
+    fourthChoice: "Une fois déclarées, leur valeur ne peut être modifiée.",
+    googAnswer:"Une fois déclarées, leur valeur ne peut être modifiée."
     };
-let QuizEight=
+let quizEight=
     {
     Quiz: "Quelle instruction permet d'ajouter un nouvel invité à la fin d'un array  ?",
-    FirstChoice: "array.push(\"value\");",
-    SecondChoice: "array.pop(\"value\");",
-    ThirdChoice: "array.add(\"value\");",
-    FourthChoice: "array.unshiftguests.add(\"value\");",
-    GoogAnswer:"array.push(\"value\");"
+    firstChoice: "array.push(\"value\");",
+    secondChoice: "array.pop(\"value\");",
+    thirdChoice: "array.add(\"value\");",
+    fourthChoice: "array.unshiftguests.add(\"value\");",
+    googAnswer:"array.push(\"value\");"
     };
-let QuizNine=
+let quizNine=
     {
     Quiz: "Comment accéderiez-vous à la propriété  title  de  l' objet  book  ?",
-    FirstChoice: "let title = book[title];",
-    SecondChoice: "let title = book.get('title');",
-    ThirdChoice: "let title = book.title;",
-    FourthChoice: "let title = title.book;",
-    GoogAnswer:"let title = book.title;"
+    firstChoice: "let title = book[title];",
+    secondChoice: "let title = book.get('title');",
+    thirdChoice: "let title = book.title;",
+    fourthChoice: "let title = title.book;",
+    googAnswer:"let title = book.title;"
     };
-let QuizTen=
+let quizTen=
     {
     Quiz: "Combien de fois la phrase  \"Oh hey!\"  sera affichée dans la console ?        for (let i = 0; i < 5; i++) console.log('Oh hey!');",
-    FirstChoice: "4",
-    SecondChoice: "5",
-    ThirdChoice: "6",
-    FourthChoice: "7",
-    GoogAnswer:"5"
+    firstChoice: "4",
+    secondChoice: "5",
+    thirdChoice: "6",
+    fourthChoice: "7",
+    googAnswer:"5"
     };
-let QuizEleven=
+let quizEleven=
     {
     Quiz: "Quel est le type d'un fichier javascript",
-    FirstChoice: ".js",
-    SecondChoice: "js",
-    ThirdChoice: ".jt",
-    FourthChoice: ".jv",
-    GoogAnswer:".js"
+    firstChoice: ".js",
+    secondChoice: "js",
+    thirdChoice: ".jt",
+    fourthChoice: ".jv",
+    googAnswer:".js"
     };
-let QuizTwelve=
+let quizTwelve=
     {
     Quiz: "Parmi les solutions suivantes, laquelle crée correctement une nouvelle instance de cette classe ?",
-    FirstChoice: "let firstMovie = Movie(\"value\");",
-    SecondChoice: "let firstMovie = new Movie(\"value\");",
-    ThirdChoice: "let firstMovie = class Movie(\"value\");",
-    FourthChoice: "let firstMovie(\"value\");",
-    GoogAnswer:"let firstMovie = new Movie(\"value\");"
+    firstChoice: "let firstMovie = Movie(\"value\");",
+    secondChoice: "let firstMovie = new Movie(\"value\");",
+    thirdChoice: "let firstMovie = class Movie(\"value\");",
+    fourthChoice: "let firstMovie(\"value\");",
+    googAnswer:"let firstMovie = new Movie(\"value\");"
     };
-let QuizThirteen=
+let quizThirteen=
     {
     Quiz: "Quel est la syntaxe correcte pour utiliser un fichier javascript?",
-    FirstChoice: "\<script src=\"xxx.js\"\>",
-    SecondChoice: "\<script href=\"xxx.js\"\>",
-    ThirdChoice: "\<script path=\"xxx.js\"\>",
-    FourthChoice: "\<script link=\"xxx.js\"\>",
-    GoogAnswer:"\<script src=\"xxx.js\"\>"
+    firstChoice: "\<script src=\"xxx.js\"\>",
+    secondChoice: "\<script href=\"xxx.js\"\>",
+    thirdChoice: "\<script path=\"xxx.js\"\>",
+    fourthChoice: "\<script link=\"xxx.js\"\>",
+    googAnswer:"\<script src=\"xxx.js\"\>"
     };
-let QuizFourteen=
+let quizFourteen=
     {
     Quiz: "Comment pouvons-nous déclarer une fonction en Javascript?",
-    FirstChoice: "function myFunction(...)",
-    SecondChoice: "myFunction function(...)",
-    ThirdChoice: "let function myFunction(...)",
-    FourthChoice: "var function myFunction(...)",
-    GoogAnswer:"function myFunction(...)"
+    firstChoice: "function myFunction(...)",
+    secondChoice: "myFunction function(...)",
+    thirdChoice: "let function myFunction(...)",
+    fourthChoice: "var function myFunction(...)",
+    googAnswer:"function myFunction(...)"
     };
-let QuizFifteen=
+let quizFifteen=
     {
     Quiz: "Comment utiliser \"While\" en Javascript ?",
-    FirstChoice: "do while (...) {...} then {...}",
-    SecondChoice: "while(...){...}",
-    ThirdChoice: "while ... ...",
-    FourthChoice: "(while ...){...}",
-    GoogAnswer:"(while ...){...}"
+    firstChoice: "do while (...) {...} then {...}",
+    secondChoice: "while(...){...}",
+    thirdChoice: "while ... ...",
+    fourthChoice: "(while ...){...}",
+    googAnswer:"(while ...){...}"
     };
-let QuizList = [QuizOne, QuizTwo, QuizThree, QuizFour, QuizFive, QuizSix, QuizSeven, QuizEight, 
-                    QuizNine, QuizTen, QuizEleven, QuizTwelve, QuizThirteen, QuizFourteen, QuizFifteen];
+let quizList = [quizOne, quizTwo, quizThree, quizFour, quizFive, quizSix, quizSeven, quizEight, 
+                    quizNine, quizTen, quizEleven, quizTwelve, quizThirteen, quizFourteen, quizFifteen];
 
 let time=60;
 let timeWidth=100;
@@ -285,11 +283,10 @@ function timeWidthFunction ()
     progressBarContained.style.width=`${(100/60)*realTime}%`;
     progressBarContained.style.backgroundColor="#028A3D";
     }
- // COUNTDOWN FUNCTION
     function countDown(){
         if (time==0) {
-            NextButton.disabled=false;
-            NextButton.click();
+            nextButton.disabled=false;
+            nextButton.click();
         }
         else {
             chrono.textContent=time+" " +"S";
@@ -298,67 +295,67 @@ function timeWidthFunction ()
     }
 function displayQuestionAndChoice () 
     {
-    NextButton.disabled=true;
-    NextButton.style.backgroundColor="rgba(2, 138, 61, 0.42)";
+    nextButton.disabled=true;
+    nextButton.style.backgroundColor="rgba(2, 138, 61, 0.42)";
     time=60;
     realTime=60;
-    Questionnaire.textContent=QuizList[index].Quiz;
-    IndexOfQuiz.textContent="Question "+(index+1) +"/15";
-    FirstChoice.setAttribute("value",QuizList[index].FirstChoice);
-    SecondChoice.setAttribute("value",QuizList[index].SecondChoice);
-    ThirdChoice.setAttribute("value",QuizList[index].ThirdChoice);
-    FourthChoice.setAttribute("value",QuizList[index].FourthChoice);
-    label1.textContent=QuizList[index].FirstChoice;
-    label2.textContent=QuizList[index].SecondChoice;
-    label3.textContent=QuizList[index].ThirdChoice;
-    label4.textContent=QuizList[index].FourthChoice;    
+    questions.textContent=quizList[index].Quiz;
+    indexOfQuiz.textContent="Question "+(index+1) +"/"+quizList.length;
+    firstChoice.setAttribute("value",quizList[index].firstChoice);
+    secondChoice.setAttribute("value",quizList[index].secondChoice);
+    thirdChoice.setAttribute("value",quizList[index].thirdChoice);
+    fourthChoice.setAttribute("value",quizList[index].fourthChoice);
+    label1.textContent=quizList[index].firstChoice;
+    label2.textContent=quizList[index].secondChoice;
+    label3.textContent=quizList[index].thirdChoice;
+    label4.textContent=quizList[index].fourthChoice;    
 }
 
 let score=0;
 function ckeckTheChoice () {
-    if  (FirstChoice.checked==true && FirstChoice.value==QuizList[index].GoogAnswer) score+=1;
-    else if  (SecondChoice.checked==true && SecondChoice.value==QuizList[index].GoogAnswer) score+=1;
-    else if  (ThirdChoice.checked==true && ThirdChoice.value==QuizList[index].GoogAnswer) score+=1;
-    else if  (FourthChoice.checked==true && FourthChoice.value==QuizList[index].GoogAnswer) score+=1;   
+    if  (firstChoice.checked==true && firstChoice.value==quizList[index].googAnswer) score+=1;
+    else if  (secondChoice.checked==true && secondChoice.value==quizList[index].googAnswer) score+=1;
+    else if  (thirdChoice.checked==true && thirdChoice.value==quizList[index].googAnswer) score+=1;
+    else if  (fourthChoice.checked==true && fourthChoice.value==quizList[index].googAnswer) score+=1;   
 
-    FirstChoice.checked=false;
-    SecondChoice.checked=false;
-    ThirdChoice.checked=false;
-    FourthChoice.checked=false;
+    firstChoice.checked=false;
+    secondChoice.checked=false;
+    thirdChoice.checked=false;
+    fourthChoice.checked=false;
 }
-let gamer={nom: "", email:""};
+let inputGamer={nom: "", email:""};
 function displayResult () {
-    InputName.textContent=gamer.nom;
-    InputMail.textContent=gamer.email;
-    if (score>(QuizList.length/2)) {
-        IconeEndPage.src="./reussi.png";
+    displayGamerName.textContent=inputGamer.nom;
+    displayGamerMail.textContent=inputGamer.email;
+    if (score>(quizList.length/2)) {
+        iconeEndPage.src="./reussi.png";
     } 
-    else {IconeEndPage.src="./echec.png";}
-    InputScore.textContent=score+"/"+QuizList.length;
-    EndButton.textContent="Accueil";
+    else {iconeEndPage.src="./echec.png";}
+    displayGamerScore.textContent=score+"/"+quizList.length;
+    endButton.textContent="Accueil";
 }
-//  check AllInput
+// validation
 let form=document.querySelector("form");
 form.addEventListener("submit",function (event) {
     event.preventDefault();
     if (nom.value=="" || email.value=="") 
         {
         if (nom.value=="") {
-            AlertName.style.display="block";
+            alertName.style.display="block";
             nom.style="border: solid 1px red"; } 
-                else {AlertName.style.display="none";
+                else {alertName.style.display="none";
                     nom.style="border: solid 1px #DDDDDD";}
         if (email.value=="") {
-            AlertMail.style.display="block";
+            alertMail.style.display="block";
             email.style="border: solid 1px red"; }
-            else { AlertMail.style.display="none";
+            else { alertMail.style.display="none";
             email.style="border: solid 1px #DDDDDD";}
         } 
     else {
-        gamer.nom=nom.value;
-        gamer.email=email.value;
-        StartPage.style.display="none";
-        MainPAgeOfQUiz.style="display : block";
+        inputGamer.nom=nom.value;
+        inputGamer.email=email.value;
+        startPage.style.display="none";
+        mainPAgeOfQUiz.style="display : block";
         let x=setInterval(() => countDown(), 1000);
         let y=setInterval(() => timeWidthFunction(), 10);
         displayQuestionAndChoice ();
@@ -366,13 +363,15 @@ form.addEventListener("submit",function (event) {
 
 });
 
-NextButton.addEventListener("click", function (event) {
-
-    if (index<QuizList.length) {
+let radioselected="";
+nextButton.addEventListener("click", function (event) {
+    // the folliwing line disable the green border on the selected
+    document.getElementById(`${radioselected}`).parentElement.style.border="1px solid #DDDDDD";
+    if (index<quizList.length) {
         ckeckTheChoice();
-        if (index==QuizList.length-1) {
-            MainPAgeOfQUiz.style.display="none";
-            EndPage.style.display="flex";
+        if (index==quizList.length-1) {
+            mainPAgeOfQUiz.style.display="none";
+            endPage.style.display="flex";
             displayResult();
         } else {
             index++;
@@ -381,66 +380,66 @@ NextButton.addEventListener("click", function (event) {
     }    
 });
 
-EndButton.addEventListener("click", function (event) {
+endButton.addEventListener("click", function (event) {
     location.reload();
 });
 
-ExitButton.addEventListener("click", function(event) {
-    MainPAgeOfQUiz.style.display="none";
-    EndPage.style.display="flex";
-    displayResult();
-})
-let ide="";
-FirstChoice.addEventListener("click", function (event){
-    NextButton.disabled=false;
-    NextButton.style.backgroundColor="#028A3D";
-    if (ide=="") {
-        ide=""+FirstChoice.id;
-        FirstChoice.parentElement.style.border="1px solid #028A3D";
+firstChoice.addEventListener("click", function (event){
+    nextButton.disabled=false;
+    nextButton.style.backgroundColor="#028A3D";
+    if (radioselected=="") {
+        radioselected=""+firstChoice.id;
+        firstChoice.parentElement.style.border="1px solid #028A3D";
     }
     else {
-        FirstChoice.parentElement.style.border="1px solid #028A3D";
-        document.getElementById(`${ide}`).parentElement.style.border="1px solid #DDDDDD";
-        ide=""+FirstChoice.id;
+        firstChoice.parentElement.style.border="1px solid #028A3D";
+        document.getElementById(`${radioselected}`).parentElement.style.border="1px solid #DDDDDD";
+        radioselected=""+firstChoice.id;
     }
 })
-SecondChoice.addEventListener("click", function (event){
-    NextButton.disabled=false;
-    NextButton.style.backgroundColor="#028A3D";
-    if (ide=="") {
-        ide=""+SecondChoice.id;
+secondChoice.addEventListener("click", function (event){
+    nextButton.disabled=false;
+    nextButton.style.backgroundColor="#028A3D";
+    if (radioselected=="") {
+        radioselected=""+secondChoice.id;
 
-        SecondChoice.parentElement.style.border="1px solid #028A3D";
+        secondChoice.parentElement.style.border="1px solid #028A3D";
     }
     else {
-        SecondChoice.parentElement.style.border="1px solid #028A3D";
-        document.getElementById(`${ide}`).parentElement.style.border="1px solid #DDDDDD";
-        ide=""+SecondChoice.id;
+        secondChoice.parentElement.style.border="1px solid #028A3D";
+        document.getElementById(`${radioselected}`).parentElement.style.border="1px solid #DDDDDD";
+        radioselected=""+secondChoice.id;
     }
 })
-ThirdChoice.addEventListener("click", function (event){
-    NextButton.disabled=false;
-    NextButton.style.backgroundColor="#028A3D";
-    if (ide=="") {
-        ide=""+ThirdChoice.id;
-        ThirdChoice.parentElement.style.border="1px solid #028A3D";
+thirdChoice.addEventListener("click", function (event){
+    nextButton.disabled=false;
+    nextButton.style.backgroundColor="#028A3D";
+    if (radioselected=="") {
+        radioselected=""+thirdChoice.id;
+        thirdChoice.parentElement.style.border="1px solid #028A3D";
     }
     else {
-        ThirdChoice.parentElement.style.border="1px solid #028A3D";
-        document.getElementById(`${ide}`).parentElement.style.border="1px solid #DDDDDD";
-        ide=""+ThirdChoice.id;
+        thirdChoice.parentElement.style.border="1px solid #028A3D";
+        document.getElementById(`${radioselected}`).parentElement.style.border="1px solid #DDDDDD";
+        radioselected=""+thirdChoice.id;
     }
 })
-FourthChoice.addEventListener("click", function (event){
-    NextButton.disabled=false;
-    NextButton.style.backgroundColor="#028A3D";
-    if (ide=="") {
-        ide=""+FourthChoice.id;
-        FourthChoice.parentElement.style.border="1px solid #028A3D";
+fourthChoice.addEventListener("click", function (event){
+    nextButton.disabled=false;
+    nextButton.style.backgroundColor="#028A3D";
+    if (radioselected=="") {
+        radioselected=""+fourthChoice.id;
+        fourthChoice.parentElement.style.border="1px solid #028A3D";
     }
     else {
-        FourthChoice.parentElement.style.border="1px solid #028A3D";
-        document.getElementById(`${ide}`).parentElement.style.border="1px solid #DDDDDD";
-        ide=""+FourthChoice.id;
+        fourthChoice.parentElement.style.border="1px solid #028A3D";
+        document.getElementById(`${radioselected}`).parentElement.style.border="1px solid #DDDDDD";
+        radioselected=""+fourthChoice.id;
     }
+})
+
+exitButton.addEventListener("click", function(event) {
+    mainPAgeOfQUiz.style.display="none";
+    endPage.style.display="flex";
+    displayResult();
 })

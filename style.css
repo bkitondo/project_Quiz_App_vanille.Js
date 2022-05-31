@@ -1,165 +1,247 @@
-html, body
-{
-    margin:0px;
-    padding-bottom: 10px;
-}
-body
-{
-height: auto;
-width: 50%;
-margin-left: auto;
-margin-right: auto;
-background-color: aquamarine;
-}
-p
-{
-text-align: center;
-font-size: 26px;
-padding: 0px 5% 0px 5%;
-}
-h1
-{
-text-align: center;
-font-size: 55px;
-}
-div
-{
-    display:block;
-    border: solid 2px #fff;
-    margin: 10px;
-    background-color: #fff;
-    margin-top: 10%;
-}
-.Input
-{
-   width: 95%; 
-   height: auto;
-   padding: 10px 10px 10px 10px;
-   font-size: 20px;
-}
-fieldset
-{
-    width: 90%;
-    padding: 10px 0 0 0;
-    margin-left: 5%;
-    font-size: 17px;
-}
-#submit
-{
-padding: 5px;
-background: #028A3D;
-color: #fff;
-width: 40%;
-margin-left: auto;
-margin-right: auto;
-font-size: 30px;
-border: none;
-}
-#EndButton
-{
-    padding: 5px;
-    background:#116fdb;
-    color: #fff;
-    width: 40%;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 30px;
-    border: none;
+html
+    {
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
     }
-form
-{
-  padding-top:10%; 
-  padding-bottom: 10%;
-}
-span
-{
-    padding-left: 5%;
-}
-.button
-{
+body 
+    {
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+    background:#85F6B8;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-family: 'Inter';
+    font-style: normal;
+    }
+main 
+    {
+    width:33%;
+    padding:3%;
+    background: #FFFFFF;
+    color: #555555;
+    margin:1.5% 0;
+    }
+.Entete 
+    {
+    font-weight: 500;
+    font-size: 3.2rem;
+    line-height: 3.9rem;
+    text-align: center;
+    }
+.paragraph 
+    {
+    margin:4% auto;
+    width:85%;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 3.2rem;
+    text-align: center;
+    }
+.InputUser 
+    {
+    margin-top:7%;
+    }
+.UserInfo 
+    {
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    display: block;
+    margin-bottom: 2%;
+    }
+.input 
+    {
+    border: 1px solid #DDDDDD;
+    display: block;
+    width: 94%;
+    font-size: 1.5rem;
+    color: #555555;
+    padding:3%;
+    }
+.inputRadio
+    {
+    font-size: 1.5rem;
+    color: #555555;
+    padding: 3%;
+    }
+.style-of-input 
+    {
+    display: block;
+    }
+.AlertName, .AlertMail 
+    {
+    display:none;
+    color:#FF3838;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-top: 1%;
+    }
+.begin-tests 
+    {
+    background-color: #028A3D;
+    margin:8% auto;
+    display:block;
+    text-align: center;
+    height:20%;
+    width:45%;
+    color:white;
+    padding: 1.5rem 0;
+    border:none;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    box-shadow: 0 .2rem .1rem .1rem #c4C4C4;
+    }
+/* page of Quiz */
+.DivQuiz 
+    {
+    display: none;
+    }
+.Quiz 
+    {
+    margin-top:6%;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 3.2rem;
+    text-align: center;
+    }
+.Quiz-number-and-chrono 
+    {
     display: flex;
     justify-content: space-between;
-}
-button
-{
-    width: 40%;
-    padding:10px;
-    font-size: 20px;
-    color: #fff;
-    border: none;
-}
-.quitter
-{
-background: #EC880C;
-;
-}
-.suivant
-{
-    background: #028A3D;
-}
-
-.legendeInput
-{
-  font-size: 26px;
-}
-
-    
-@media all and (max-width: 428px)
-{
-    body
-    {
-    height: auto;
-    width: 90%;
-    margin: auto;
-    background-color: aquamarine;
     }
-    p
+.number-of-Quiz 
     {
+    display: block;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 3.2rem;
+    color: #555555;
+    }
+.chrono 
+    {
+    display: block;
+    font-size: 1.4rem;
+    line-height: 3.2rem;
+    color: #555555;
+    }
+.progress-bar 
+    {
+    height:1rem;
+    background-color:#DDDDDD;
+    border-radius: 1rem;
+    margin-bottom: 10%;
+    }
+.progress-bar-contained 
+    {
+    display: block;
+    border-radius: 1rem;
+    background-color:#028A3D;
+    height: 1rem;
+    }
+.choice-list__element 
+    {
+    height: 7.5%;
+    border: 1px solid #DDDDDD;
+    padding: 1rem;
+    margin-bottom:5%;
+    font-size: 2rem;
+    }
+[name|="choice"]:checked 
+    {
+    border: 1rem solid #028A3D;
+    }
+.AllButton 
+    {
+    display: flex;
+    justify-content: space-between;
+    margin:10% 0 5% 0;
+    }
+.style-of-button 
+    {
+    height:20%;
+    width:45%;
+    color:white;
+    padding: 1.5rem 0;
+    border:none;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    box-shadow: 0 .2rem .1rem .1rem #c4C4C4;
+    }
+.button-quit 
+    {
+    background-color: #EC880C;
+    cursor:pointer;
+    }
+.button-next 
+    {
+    background-color: #028A3D;
+    cursor:pointer;
+    }
+/* EndPage */
+.EndButton 
+    {
+    background-color: #0880D6;
+    cursor:pointer;
+    margin: 3% 0 15% 0;
+    }
+.EndPage 
+    {
+    display:none;
+    flex-direction: column;
+    align-items: center;
+    }
+.second-title 
+    {
+    margin:15% 0 0 0;
+    font-weight: 500;
+    font-size: 4rem;
+    line-height: 4.8rem;
     text-align: center;
-    font-size: 14px;
-    padding: 0px 5% 0px 5%;
     }
-    h1
-    {   
+.UserMail 
+    {
+    margin-bottom: 6%;
+    width:85%;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 3.2rem;
     text-align: center;
-    font-size: 25px;
     }
-    .Input
+.icone
     {
-   width: 95%; 
-   height: auto;
-   padding: 5px;
-   font-size: 12px;
+    color:#028A3D;
+    font-size: 1450%;
+    font-weight: normal;
     }
-    fieldset
+.score 
     {
-    width: 90%;
-    padding: 3px;
-    margin-left: 5%;
-    font-size: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    text-align: center;
+    color: #555555;
+    margin:10% 0 5% 0;
     }
-    div
-{
-    display:block;
-    border: solid 2px #fff;
-    margin: auto;
-    background-color: #fff;
-    margin-top: 5%;
-}
-span 
-{
-    font-size: 10px;
-}
-.legendeInput
-{
-  font-size: 12px;
-}
-button, #EndButton ,#submit
-{
-    width: 40%;
-    padding:5px;
-    font-size: 12px;
-    color: #fff;
-    border: none;
-}
-}
+[name|="choice"] 
+    {
+    appearance: none;
+    border: 1px solid #DDDDDD;
+    border-radius: 2rem;
+    height: 2rem;
+    width: 2rem;
+    }
+@media all and (min-width:600px) and (max-width: 1024px) 
+{ main { width:50%;}  }
+@media all and (min-width:320px) and (max-width: 600px) { main { width:80%;}
+  .begin-tests {width:70%;}}

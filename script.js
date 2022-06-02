@@ -289,7 +289,7 @@ function timeWidthFunction ()
             nextButton.click();
         }
         else {
-            chrono.textContent=time+" " +"S";
+            chrono.textContent=time;
             time--;
         }
     }
@@ -373,10 +373,13 @@ nextButton.addEventListener("click", function (event) {
             mainPAgeOfQUiz.style.display="none";
             endPage.style.display="flex";
             displayResult();
-        } else {
+        } 
+        else {
             index++;
             displayQuestionAndChoice();
         }
+        if (index==quizList.length-1)
+            {nextButton.textContent="Terminer";}      
     }    
 });
 

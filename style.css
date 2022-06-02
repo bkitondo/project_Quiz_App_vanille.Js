@@ -3,6 +3,8 @@ html
     font-size: 10px;
     margin: 0;
     padding: 0;
+    position: relative;
+background:rgba(142, 217, 235, 0.85);
     }
 body 
     {
@@ -18,11 +20,11 @@ body
     }
 main 
     {
-    width:33%;
+    width:40%;
     padding:3%;
     background: #FFFFFF;
-    color: #555555;
     margin:1.5% 0;
+    color: #555555;
     }
 .headerOfStartPage
     {
@@ -30,15 +32,18 @@ main
     font-size: 3.2rem;
     line-height: 3.9rem;
     text-align: center;
+    color: #555555;
+
     }
 .paragraph 
     {
     margin:4% auto;
     width:85%;
-    font-size: 1.6rem;
+    font-size: 1.9rem;
     font-weight: 400;
     line-height: 3.2rem;
     text-align: center;
+    color: #555555;
     }
 .inputGamer 
     {
@@ -236,6 +241,27 @@ main
     width: 2rem;
     }
 @media all and (min-width:600px) and (max-width: 1024px) 
-{ main { width:50%;}  }
-@media all and (min-width:320px) and (max-width: 600px) { main { width:80%;}
-  .begin-tests {width:70%;}}
+{ 
+    main { width:50%;} 
+    .headerOfStartPage
+    {
+    font-size: 3rem;
+    }
+.paragraph 
+    {
+    font-size: 2rem;
+    }
+    
+ }
+@media all and (min-width:320px) and (max-width: 600px) {
+     main { width:80%;}
+  .begin-tests {width:70%;}
+  .headerOfStartPage
+    {
+    font-size: 2.4rem;
+    }
+.paragraph 
+    {
+    font-size: 1.45rem;
+    }
+}

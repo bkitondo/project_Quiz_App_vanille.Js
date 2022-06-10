@@ -5,6 +5,7 @@ let nom=document.querySelector("#nom");
 let allInputs=document.querySelectorAll('[type|="radio"]');
 let alertName =document.querySelector(".alertName");
 let alertMail =document.querySelector(".alertMail");
+
 // Create elements of EndPAges
 let endPage=document.createElement("div"); 
 endPage.classList.add("endPage"); mainPage.appendChild(endPage);
@@ -82,7 +83,8 @@ exitButton.classList.add("buttonExit", "styleOfButton");
 exitButton.textContent="Quitter";
 containerOfButton.appendChild(exitButton);
 
-let nextButton=document.createElement("button");
+let nextButton = document.createElement("button");
+nextButton.setAttribute("onclick", "nextQuestion(this)");
 nextButton.classList.add("buttonNext", "styleOfButton");
 nextButton.textContent="Suivant";
 containerOfButton.appendChild(nextButton);
@@ -135,170 +137,185 @@ answerFour.appendChild(label4);
 let validate=false;
 let index=0;
 // Create QUizs
-let quizOne=
+    
+let quizList = 
+[
     {
-    Quiz: "Parmi les propositions suivantes, laquelle correspond à une déclaration et une initialisation de la variable ?",
-    firstChoice: "variable myVariable = 12;",
-    secondChoice: "let 12 = myVariable;",
-    thirdChoice: "let myVariable = 12;",
-    fourthChoice: "let my variable = 12;",
-    googAnswer:"let myVariable = 12;"
-    };
-let quizTwo=
+        Quiz: "Parmi les propositions suivantes, laquelle correspond à une déclaration et une initialisation de la variable ?",
+        firstChoice: "variable myVariable = 12;",
+        secondChoice: "let 12 = myVariable;",
+        thirdChoice: "let myVariable = 12;",
+        fourthChoice: "let my variable = 12;",
+        googAnswer:"let myVariable = 12;"
+    }, 
     {
-    Quiz: " Quelle proposition correspond à un type primitif en JavaScript ?",
-     firstChoice: " Array",
-    secondChoice: "Boolean", 
-    thirdChoice: "Object",
-    fourthChoice: "Class",
-    googAnswer:"Boolean"
-    };
-let quizThree=
+        Quiz: " Quelle proposition correspond à un type primitif en JavaScript ?",
+         firstChoice: " Array",
+        secondChoice: "Boolean", 
+        thirdChoice: "Object",
+        fourthChoice: "Class",
+        googAnswer:"Boolean"
+    },
     {
-    Quiz: " Quelle est la valeur attendue de la variable numberOfCats à la fin de cet extrait de code ?                 {let numberOfCats=10;  numberOfCats+=5;  numberOfCats/=3; numberOfCats++;} ",
-    firstChoice: "4",
-    secondChoice: "5",
-    thirdChoice: "6",
-    fourthChoice: "7",
-    googAnswer:"6"
-    };
-let quizFour=
+        Quiz: " Quelle est la valeur attendue de la variable numberOfCats à la fin de cet extrait de code ?                 {let numberOfCats=10;  numberOfCats+=5;  numberOfCats/=3; numberOfCats++;} ",
+        firstChoice: "4",
+        secondChoice: "5",
+        thirdChoice: "6",
+        fourthChoice: "7",
+        googAnswer:"6"
+    },
     {
-    Quiz: "En JavaScript, un object est déclaré comme une liste de paires clé/valeur entre…",
-    firstChoice: "{}  accolades.",
-    secondChoice: "[]  crochets.",
-    thirdChoice: "()  parenthèses.",
-    fourthChoice: "aucune des réponses ci-dessus.",
-    googAnswer:"{}  accolades."
-    };
-let quizFive=
+        Quiz: "En JavaScript, un object est déclaré comme une liste de paires clé/valeur entre…",
+        firstChoice: "{}  accolades.",
+        secondChoice: "[]  crochets.",
+        thirdChoice: "()  parenthèses.",
+        fourthChoice: "aucune des réponses ci-dessus.",
+        googAnswer:"{}  accolades."
+    },
     {
-    Quiz: "On déclare un array (tableau) comme une liste d'éléments, séparés par des virgules, entre…",
-    firstChoice: "()  parenthèses.",
-    secondChoice: "{}  accolades.",
-    thirdChoice: "[]  crochets.",
-    fourthChoice: "aucune des réponses ci-dessus.",
-    googAnswer:"[]  crochets."
-    };
-let quizSix=
+        Quiz: "On déclare un array (tableau) comme une liste d'éléments, séparés par des virgules, entre…",
+        firstChoice: "()  parenthèses.",
+        secondChoice: "{}  accolades.",
+        thirdChoice: "[]  crochets.",
+        fourthChoice: "aucune des réponses ci-dessus.",
+        googAnswer:"[]  crochets."
+    },
     {
-    Quiz: "Comment feriez-vous pour calculer le nombre d'éléments dans l'array  onlineUsers  ?",
-    firstChoice: "let numberOfUsers = onlineUsers.size;",
-    secondChoice: "let numberOfUsers = onlineUsers.quantity;",
-    thirdChoice: "let numberOfUsers = onlineUsers.index;",
-    fourthChoice: "let numberOfUsers = onlineUsers.length;",
-    googAnswer:"let numberOfUsers = onlineUsers.length;"
-    };
-let quizSeven=
+        Quiz: "Comment feriez-vous pour calculer le nombre d'éléments dans l'array  onlineUsers  ?",
+        firstChoice: "let numberOfUsers = onlineUsers.size;",
+        secondChoice: "let numberOfUsers = onlineUsers.quantity;",
+        thirdChoice: "let numberOfUsers = onlineUsers.index;",
+        fourthChoice: "let numberOfUsers = onlineUsers.length;",
+        googAnswer:"let numberOfUsers = onlineUsers.length;"
+    },
     {
-    Quiz: "Quelle phrase ci-dessous est  vraie au sujet des constantes ?",
-    firstChoice: "leur valeur peut être modifiée apres la declaration.",
-    secondChoice: "On peut déclarer une constante sans l'initialiser.",
-    thirdChoice: "Leur type peut être modifié après déclaration.",
-    fourthChoice: "Une fois déclarées, leur valeur ne peut être modifiée.",
-    googAnswer:"Une fois déclarées, leur valeur ne peut être modifiée."
-    };
-let quizEight=
+        Quiz: "Quelle phrase ci-dessous est  vraie au sujet des constantes ?",
+        firstChoice: "leur valeur peut être modifiée apres la declaration.",
+        secondChoice: "On peut déclarer une constante sans l'initialiser.",
+        thirdChoice: "Leur type peut être modifié après déclaration.",
+        fourthChoice: "Une fois déclarées, leur valeur ne peut être modifiée.",
+        googAnswer:"Une fois déclarées, leur valeur ne peut être modifiée."
+    },
     {
-    Quiz: "Quelle instruction permet d'ajouter un nouvel invité à la fin d'un array  ?",
-    firstChoice: "array.push(\"value\");",
-    secondChoice: "array.pop(\"value\");",
-    thirdChoice: "array.add(\"value\");",
-    fourthChoice: "array.unshiftguests.add(\"value\");",
-    googAnswer:"array.push(\"value\");"
-    };
-let quizNine=
+        Quiz: "Quelle instruction permet d'ajouter un nouvel invité à la fin d'un array  ?",
+        firstChoice: "array.push(\"value\");",
+        secondChoice: "array.pop(\"value\");",
+        thirdChoice: "array.add(\"value\");",
+        fourthChoice: "array.unshiftguests.add(\"value\");",
+        googAnswer:"array.push(\"value\");"
+    },
     {
-    Quiz: "Comment accéderiez-vous à la propriété  title  de  l' objet  book  ?",
-    firstChoice: "let title = book[title];",
-    secondChoice: "let title = book.get('title');",
-    thirdChoice: "let title = book.title;",
-    fourthChoice: "let title = title.book;",
-    googAnswer:"let title = book.title;"
-    };
-let quizTen=
+        Quiz: "Comment accéderiez-vous à la propriété  title  de  l' objet  book  ?",
+        firstChoice: "let title = book[title];",
+        secondChoice: "let title = book.get('title');",
+        thirdChoice: "let title = book.title;",
+        fourthChoice: "let title = title.book;",
+        googAnswer:"let title = book.title;"
+    },
     {
-    Quiz: "Combien de fois la phrase  \"Oh hey!\"  sera affichée dans la console ?        for (let i = 0; i < 5; i++) console.log('Oh hey!');",
-    firstChoice: "4",
-    secondChoice: "5",
-    thirdChoice: "6",
-    fourthChoice: "7",
-    googAnswer:"5"
-    };
-let quizEleven=
+        Quiz: "Combien de fois la phrase  \"Oh hey!\"  sera affichée dans la console ?        for (let i = 0; i < 5; i++) console.log('Oh hey!');",
+        firstChoice: "4",
+        secondChoice: "5",
+        thirdChoice: "6",
+        fourthChoice: "7",
+        googAnswer:"5"
+    },
     {
-    Quiz: "Quel est le type d'un fichier javascript",
-    firstChoice: ".js",
-    secondChoice: "js",
-    thirdChoice: ".jt",
-    fourthChoice: ".jv",
-    googAnswer:".js"
-    };
-let quizTwelve=
+        Quiz: "Quel est le type d'un fichier javascript",
+        firstChoice: ".js",
+        secondChoice: "js",
+        thirdChoice: ".jt",
+        fourthChoice: ".jv",
+        googAnswer:".js"
+    },
     {
-    Quiz: "Parmi les solutions suivantes, laquelle crée correctement une nouvelle instance de cette classe ?",
-    firstChoice: "let firstMovie = Movie(\"value\");",
-    secondChoice: "let firstMovie = new Movie(\"value\");",
-    thirdChoice: "let firstMovie = class Movie(\"value\");",
-    fourthChoice: "let firstMovie(\"value\");",
-    googAnswer:"let firstMovie = new Movie(\"value\");"
-    };
-let quizThirteen=
+        Quiz: "Parmi les solutions suivantes, laquelle crée correctement une nouvelle instance de cette classe ?",
+        firstChoice: "let firstMovie = Movie(\"value\");",
+        secondChoice: "let firstMovie = new Movie(\"value\");",
+        thirdChoice: "let firstMovie = class Movie(\"value\");",
+        fourthChoice: "let firstMovie(\"value\");",
+        googAnswer:"let firstMovie = new Movie(\"value\");"
+    },
     {
-    Quiz: "Quel est la syntaxe correcte pour utiliser un fichier javascript?",
-    firstChoice: "\<script src=\"xxx.js\"\>",
-    secondChoice: "\<script href=\"xxx.js\"\>",
-    thirdChoice: "\<script path=\"xxx.js\"\>",
-    fourthChoice: "\<script link=\"xxx.js\"\>",
-    googAnswer:"\<script src=\"xxx.js\"\>"
-    };
-let quizFourteen=
+        Quiz: "Quel est la syntaxe correcte pour utiliser un fichier javascript?",
+        firstChoice: "\<script src=\"xxx.js\"\>",
+        secondChoice: "\<script href=\"xxx.js\"\>",
+        thirdChoice: "\<script path=\"xxx.js\"\>",
+        fourthChoice: "\<script link=\"xxx.js\"\>",
+        googAnswer:"\<script src=\"xxx.js\"\>"
+    },
     {
-    Quiz: "Comment pouvons-nous déclarer une fonction en Javascript?",
-    firstChoice: "function myFunction(...)",
-    secondChoice: "myFunction function(...)",
-    thirdChoice: "let function myFunction(...)",
-    fourthChoice: "var function myFunction(...)",
-    googAnswer:"function myFunction(...)"
-    };
-let quizFifteen=
+        Quiz: "Comment pouvons-nous déclarer une fonction en Javascript?",
+        firstChoice: "function myFunction(...)",
+        secondChoice: "myFunction function(...)",
+        thirdChoice: "let function myFunction(...)",
+        fourthChoice: "var function myFunction(...)",
+        googAnswer:"function myFunction(...)"
+    },
     {
-    Quiz: "Comment utiliser \"While\" en Javascript ?",
-    firstChoice: "do while (...) {...} then {...}",
-    secondChoice: "while(...){...}",
-    thirdChoice: "while ... ...",
-    fourthChoice: "(while ...){...}",
-    googAnswer:"(while ...){...}"
-    };
-let quizList = [quizOne, quizTwo, quizThree, quizFour, quizFive, quizSix, quizSeven, quizEight, 
-                    quizNine, quizTen, quizEleven, quizTwelve, quizThirteen, quizFourteen, quizFifteen];
+        Quiz: "Comment utiliser \"While\" en Javascript ?",
+        firstChoice: "do while (...) {...} then {...}",
+        secondChoice: "while(...){...}",
+        thirdChoice: "while ... ...",
+        fourthChoice: "(while ...){...}",
+        googAnswer:"(while ...){...}"
+    },
+];
 
 let time=60;
-let timeWidth=100;
-let realTime=60;
+let interval = null;
+let timeCount=0;
 
-function timeWidthFunction () 
-    {
-    realTime-=0.0098;
-    progressBarContained.style.width=`${(100/60)*realTime}%`;
-    progressBarContained.style.backgroundColor="#028A3D";
-    }
-    function countDown(){
-        if (time==0) {
-            nextButton.disabled=false;
-            nextButton.click();
+function countTime()
+{
+    clearInterval(interval)
+    timeCount=time;
+    chrono.textContent=timeCount;
+
+    interval = setInterval(function(){
+        timeCount--
+        console.log(timeCount)
+        chrono.textContent=timeCount;
+
+progressBarContained.style.width=`${(timeCount)}%`;
+
+
+        if (timeCount==0){
+            clearInterval(interval)
+            nextQuestion()
         }
-        else {
-            chrono.textContent=time;
-            time--;
-        }
-    }
+    }, 1000)
+}
+
+// let time = 5;
+//  let timeWidth=100;
+// let realTime=60;
+
+// function timeWidthFunction () 
+// {
+//     realTime-=0.0098;
+//     progressBarContained.style.width=`${(100/60)*realTime}%`;
+//     progressBarContained.style.backgroundColor="#028A3D";
+// }
+
+// function countDown()
+// {
+//     if (time==0) {
+//         nextButton.click();
+//         nextButton.disabled=false;
+//     }
+//     else {
+//         chrono.textContent=time;
+//         time--;
+//     }
+// }
+
 function displayQuestionAndChoice () 
     {
     nextButton.disabled=true;
     nextButton.style.backgroundColor="rgba(2, 138, 61, 0.42)";
-    time=60;
-    realTime=60;
+    // let time=5; // the time
+    // let realTime=60; //  la largeur de la barre
     questions.textContent=quizList[index].Quiz;
     indexOfQuiz.textContent="Question "+(index+1) +"/"+quizList.length;
     firstChoice.setAttribute("value",quizList[index].firstChoice);
@@ -355,33 +372,57 @@ form.addEventListener("submit",function (event) {
         inputGamer.nom=nom.value;
         inputGamer.email=email.value;
         startPage.style.display="none";
-        mainPAgeOfQUiz.style="display : block";
-        let x=setInterval(() => countDown(), 1000);
-        let y=setInterval(() => timeWidthFunction(), 10);
+        mainPAgeOfQUiz.style="display : block"
+        countTime()
         displayQuestionAndChoice ();
     }
 
 });
 
 let radioselected="";
-nextButton.addEventListener("click", function (event) {
-    // the folliwing line disable the green border on the selected
-    document.getElementById(`${radioselected}`).parentElement.style.border="1px solid #DDDDDD";
-    if (index<quizList.length) {
+// nextButton.addEventListener("click", function (event) {
+//     document.getElementById(`${radioselected}`).parentElement.style.border="1px solid #DDDDDD";
+    
+//     console.log(index);
+
+//     if (index < quizList.length) 
+//     {
+//         ckeckTheChoice();
+//         if (index==quizList.length-1) {
+//             mainPAgeOfQUiz.style.display="none";
+//             endPage.style.display="flex";
+//             nextButton.textContent="Terminer";
+//             displayResult();
+//         } 
+//         else 
+//         {
+//             index++;
+//             displayQuestionAndChoice();
+//         }   
+//     }  
+// });
+
+function nextQuestion(e)
+{
+    // document.getElementById(`${radioselected}`).parentElement.style.border="1px solid #DDDDDD";
+
+    if (index < quizList.length) 
+    {
         ckeckTheChoice();
         if (index==quizList.length-1) {
             mainPAgeOfQUiz.style.display="none";
             endPage.style.display="flex";
+            nextButton.textContent="Terminer";
             displayResult();
         } 
-        else {
+        else 
+        {
             index++;
             displayQuestionAndChoice();
-        }
-        if (index==quizList.length-1)
-            {nextButton.textContent="Terminer";}      
-    }    
-});
+            countTime()
+        }   
+    }  
+}
 
 endButton.addEventListener("click", function (event) {
     location.reload();

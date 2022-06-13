@@ -5,7 +5,6 @@ let nom=document.querySelector("#nom");
 let allInputs=document.querySelectorAll('[type|="radio"]');
 let alertName =document.querySelector(".alertName");
 let alertMail =document.querySelector(".alertMail");
-
 // Create elements of EndPAges
 let endPage=document.createElement("div"); 
 endPage.classList.add("endPage"); mainPage.appendChild(endPage);
@@ -271,51 +270,26 @@ function countTime()
     clearInterval(interval)
     timeCount=time;
     chrono.textContent=timeCount;
+    progressBarContained.style.width="100%"
 
-    interval = setInterval(function(){
+    interval = setInterval(function()
+    {
         timeCount--
-        console.log(timeCount)
         chrono.textContent=timeCount;
+        progressBarContained.style.width=`${(timeCount*10)/6}%`;
 
-progressBarContained.style.width=`${(timeCount)}%`;
-
-
-        if (timeCount==0){
+        if (timeCount==0)
+        {
             clearInterval(interval)
             nextQuestion()
         }
     }, 1000)
 }
 
-// let time = 5;
-//  let timeWidth=100;
-// let realTime=60;
-
-// function timeWidthFunction () 
-// {
-//     realTime-=0.0098;
-//     progressBarContained.style.width=`${(100/60)*realTime}%`;
-//     progressBarContained.style.backgroundColor="#028A3D";
-// }
-
-// function countDown()
-// {
-//     if (time==0) {
-//         nextButton.click();
-//         nextButton.disabled=false;
-//     }
-//     else {
-//         chrono.textContent=time;
-//         time--;
-//     }
-// }
-
-function displayQuestionAndChoice () 
-    {
+function displayQuestionAndChoice() 
+{
     nextButton.disabled=true;
     nextButton.style.backgroundColor="rgba(2, 138, 61, 0.42)";
-    // let time=5; // the time
-    // let realTime=60; //  la largeur de la barre
     questions.textContent=quizList[index].Quiz;
     indexOfQuiz.textContent="Question "+(index+1) +"/"+quizList.length;
     firstChoice.setAttribute("value",quizList[index].firstChoice);
@@ -329,7 +303,8 @@ function displayQuestionAndChoice ()
 }
 
 let score=0;
-function ckeckTheChoice () {
+function ckeckTheChoice () 
+{
     if  (firstChoice.checked==true && firstChoice.value==quizList[index].googAnswer) score+=1;
     else if  (secondChoice.checked==true && secondChoice.value==quizList[index].googAnswer) score+=1;
     else if  (thirdChoice.checked==true && thirdChoice.value==quizList[index].googAnswer) score+=1;
@@ -340,35 +315,50 @@ function ckeckTheChoice () {
     thirdChoice.checked=false;
     fourthChoice.checked=false;
 }
+
 let inputGamer={nom: "", email:""};
-function displayResult () {
+function displayResult () 
+{
     displayGamerName.textContent=inputGamer.nom;
     displayGamerMail.textContent=inputGamer.email;
-    if (score>(quizList.length/2)) {
-        iconeEndPage.src="./reussi.png";
-    } 
+    if (score>(quizList.length/2)) 
+        {
+            iconeEndPage.src="./reussi.png";
+        } 
     else {iconeEndPage.src="./echec.png";}
+
     displayGamerScore.textContent=score+"/"+quizList.length;
     endButton.textContent="Accueil";
 }
 // validation
 let form=document.querySelector("form");
-form.addEventListener("submit",function (event) {
+form.addEventListener("submit",function (event) 
+{
     event.preventDefault();
     if (nom.value=="" || email.value=="") 
+    {
+        if (nom.value=="") 
         {
-        if (nom.value=="") {
             alertName.style.display="block";
-            nom.style="border: solid 1px red"; } 
-                else {alertName.style.display="none";
-                    nom.style="border: solid 1px #DDDDDD";}
-        if (email.value=="") {
-            alertMail.style.display="block";
-            email.style="border: solid 1px red"; }
-            else { alertMail.style.display="none";
-            email.style="border: solid 1px #DDDDDD";}
+            nom.style="border: solid 1px red"; 
         } 
-    else {
+        else 
+        {
+            alertName.style.display="none";
+            nom.style="border: solid 1px #DDDDDD";
+        }
+        if (email.value=="") 
+        {
+            alertMail.style.display="block";
+            email.style="border: solid 1px red"; 
+        }
+        else 
+        {   alertMail.style.display="none";
+            email.style="border: solid 1px #DDDDDD";
+        }
+    } 
+    else 
+    {
         inputGamer.nom=nom.value;
         inputGamer.email=email.value;
         startPage.style.display="none";
@@ -376,40 +366,22 @@ form.addEventListener("submit",function (event) {
         countTime()
         displayQuestionAndChoice ();
     }
-
 });
 
 let radioselected="";
-// nextButton.addEventListener("click", function (event) {
-//     document.getElementById(`${radioselected}`).parentElement.style.border="1px solid #DDDDDD";
-    
-//     console.log(index);
-
-//     if (index < quizList.length) 
-//     {
-//         ckeckTheChoice();
-//         if (index==quizList.length-1) {
-//             mainPAgeOfQUiz.style.display="none";
-//             endPage.style.display="flex";
-//             nextButton.textContent="Terminer";
-//             displayResult();
-//         } 
-//         else 
-//         {
-//             index++;
-//             displayQuestionAndChoice();
-//         }   
-//     }  
-// });
 
 function nextQuestion(e)
 {
-    // document.getElementById(`${radioselected}`).parentElement.style.border="1px solid #DDDDDD";
+    answerOne.style.border="1px solid #DDDDDD";
+    answerTwo.style.border="1px solid #DDDDDD";
+    answerTree.style.border="1px solid #DDDDDD";
+    answerFour.style.border="1px solid #DDDDDD";
 
     if (index < quizList.length) 
     {
         ckeckTheChoice();
-        if (index==quizList.length-1) {
+        if (index==quizList.length-1) 
+        {
             mainPAgeOfQUiz.style.display="none";
             endPage.style.display="flex";
             nextButton.textContent="Terminer";
@@ -424,66 +396,80 @@ function nextQuestion(e)
     }  
 }
 
-endButton.addEventListener("click", function (event) {
+endButton.addEventListener("click", function (event) 
+{
     location.reload();
 });
 
-firstChoice.addEventListener("click", function (event){
+firstChoice.addEventListener("click", function (event)
+{
     nextButton.disabled=false;
     nextButton.style.backgroundColor="#028A3D";
-    if (radioselected=="") {
+    if (radioselected=="") 
+    {
         radioselected=""+firstChoice.id;
         firstChoice.parentElement.style.border="1px solid #028A3D";
     }
-    else {
+    else 
+    {
         firstChoice.parentElement.style.border="1px solid #028A3D";
         document.getElementById(`${radioselected}`).parentElement.style.border="1px solid #DDDDDD";
         radioselected=""+firstChoice.id;
     }
 })
-secondChoice.addEventListener("click", function (event){
+secondChoice.addEventListener("click", function (event)
+{
     nextButton.disabled=false;
     nextButton.style.backgroundColor="#028A3D";
-    if (radioselected=="") {
+    if (radioselected=="") 
+    {
         radioselected=""+secondChoice.id;
-
         secondChoice.parentElement.style.border="1px solid #028A3D";
     }
-    else {
+    else 
+    {
         secondChoice.parentElement.style.border="1px solid #028A3D";
         document.getElementById(`${radioselected}`).parentElement.style.border="1px solid #DDDDDD";
         radioselected=""+secondChoice.id;
     }
 })
-thirdChoice.addEventListener("click", function (event){
+thirdChoice.addEventListener("click", function (event)
+{
     nextButton.disabled=false;
     nextButton.style.backgroundColor="#028A3D";
-    if (radioselected=="") {
+    if (radioselected=="") 
+    {
         radioselected=""+thirdChoice.id;
         thirdChoice.parentElement.style.border="1px solid #028A3D";
     }
-    else {
+    else 
+    {
         thirdChoice.parentElement.style.border="1px solid #028A3D";
         document.getElementById(`${radioselected}`).parentElement.style.border="1px solid #DDDDDD";
         radioselected=""+thirdChoice.id;
     }
 })
-fourthChoice.addEventListener("click", function (event){
+fourthChoice.addEventListener("click", function (event)
+{
     nextButton.disabled=false;
     nextButton.style.backgroundColor="#028A3D";
-    if (radioselected=="") {
+    if (radioselected=="") 
+    {
         radioselected=""+fourthChoice.id;
         fourthChoice.parentElement.style.border="1px solid #028A3D";
     }
-    else {
+    else 
+    {
         fourthChoice.parentElement.style.border="1px solid #028A3D";
         document.getElementById(`${radioselected}`).parentElement.style.border="1px solid #DDDDDD";
         radioselected=""+fourthChoice.id;
     }
 })
 
-exitButton.addEventListener("click", function(event) {
+exitButton.addEventListener("click", function(event) 
+{
     mainPAgeOfQUiz.style.display="none";
+    clearInterval(interval)
     endPage.style.display="flex";
     displayResult();
 })

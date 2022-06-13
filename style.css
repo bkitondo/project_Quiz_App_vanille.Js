@@ -85,7 +85,7 @@ main
     line-height: 1.5rem;
     margin-top: 1%;
     }
-.begin-tests 
+.tests 
     {
     background-color: #028A3D;
     margin:8% auto;
@@ -110,7 +110,7 @@ main
 .quiz 
     {
     margin-top:6%;
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: 400;
     line-height: 3.2rem;
     text-align: center;
@@ -240,22 +240,25 @@ main
     height: 2rem;
     width: 2rem;
     }
-@media all and (min-width:600px) and (max-width: 1024px) 
+@media all and (min-width:600px) and (max-width: 900px) 
 { 
-    main { width:50%;} 
+    main 
+    { 
+    width:70%;
+    height: auto;
+    } 
     .headerOfStartPage
     {
     font-size: 3rem;
     }
-.paragraph 
+    .paragraph 
     {
     font-size: 2rem;
     }
-    
  }
 @media all and (min-width:320px) and (max-width: 600px) {
      main { width:80%;}
-  .begin-tests {width:70%;}
+  .tests {width:70%;}
   .headerOfStartPage
     {
     font-size: 2.4rem;

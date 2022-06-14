@@ -372,6 +372,10 @@ let radioselected="";
 
 function nextQuestion(e)
 {
+if (index==quizList.length-2)
+{
+    nextButton.textContent="Terminer";
+}
     answerOne.style.border="1px solid #DDDDDD";
     answerTwo.style.border="1px solid #DDDDDD";
     answerTree.style.border="1px solid #DDDDDD";
@@ -382,9 +386,10 @@ function nextQuestion(e)
         ckeckTheChoice();
         if (index==quizList.length-1) 
         {
+            
             mainPAgeOfQUiz.style.display="none";
             endPage.style.display="flex";
-            nextButton.textContent="Terminer";
+            
             displayResult();
         } 
         else 
